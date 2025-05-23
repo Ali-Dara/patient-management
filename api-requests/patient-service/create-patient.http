@@ -1,0 +1,11 @@
+### Send POST request with json body
+POST http://localhost:4000/patient
+Content-Type: application/json
+
+{
+  "name": "Ali dara",
+  "email": "Ali.dara@example.com",
+  "address": "123 Main St, Springfield",
+  "dateOfBirth": "1997-05-21",
+  "registerDate": "2025-05-22"
+}
