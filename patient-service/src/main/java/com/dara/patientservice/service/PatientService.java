@@ -39,7 +39,15 @@ public class PatientService {
 
     public PatientResponseDto updatePatient(UUID id, PatientRequestDto patientRequestDto){
         Patient patient = patientRepository.findById(id).orElseThrow(() -> new PatientDoseNotExistException("patient with id: " + id + " not find"));
+        Patient updatedpatient  = patientMapper.toPatient(patientRequestDto);
 
+        patient.setAddress(updatedpatient.getAddress());
+        patient.setName(updatedpatient.getName());
+        patient.setEmail(updatedpatient.getEmail());
+        patient.setRegistered_date(updatedpatient.getRegistered_date());
+        patient.setDate_of_birth(updatedpatient.getDate_of_birth());
+
+        patientRepository.save(patient);
         return patientMapper.toPatientResponseDto(patient);
     }
 }

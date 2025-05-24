@@ -13,4 +13,5 @@ public interface PatientMapper {
     @Mapping(source = "dateOfBirth", target = "date_of_birth", dateFormat = "yyyy-MM-dd")
     @Mapping(source = "registerDate", target = "registered_date", dateFormat = "yyyy-MM-dd")
     Patient toPatient(PatientRequestDto patientDto);
+
 }
