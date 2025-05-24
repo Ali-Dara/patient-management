@@ -42,4 +42,10 @@ public class PatientController {
         return ResponseEntity.ok(patientResponseDto);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePatient(@PathVariable UUID id){
+        patientService.deletePatient(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
